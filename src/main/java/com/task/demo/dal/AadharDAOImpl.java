@@ -21,7 +21,7 @@ public class AadharDAOImpl implements AadharDAO {
 	@Override
 	public Object saveUserData(List<UserDetails> listOfUserDetailsToBeSaved) {
 		try {
-			mongoTemplate.save(listOfUserDetailsToBeSaved);
+			mongoTemplate.save(listOfUserDetailsToBeSaved, "userDetails");
 			return null;
 		} catch (Exception e) {
 			logger.info("Exception_in_saveUserData: " + e.getMessage());
